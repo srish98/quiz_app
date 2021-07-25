@@ -1,4 +1,4 @@
-**This is a Django project for a professor/student app that allows for the professor to create a test and for the student to take it and be graded.**<br><br>
+*This is a Django project for a professor/student app that allows for the professor to create a test and for the student to take it and be graded.*<br><br>
 Tools and technologies:<br>
        Python, Django, HTML, CSS, Bootstrap, VsCode, Github<br> <br>
 	
