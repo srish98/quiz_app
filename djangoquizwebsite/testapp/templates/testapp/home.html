@@ -1,0 +1,79 @@
+{% include 'testapp/nav.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{% static '/css/home.css' %}" type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+{% if request.user.is_staff %}
+<div class="card text-center">
+  <div class="card-header">
+  </div>
+  <div class="card-body">
+    <img src="data:image/png;base64,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" class="card-img-top" alt="...">
+    <br>
+    <h5 class="card-title">Python Online Quiz</h5>
+    
+    </ol>
+    <a href="{% url 'pythonquiz'%}" class="btn btn-success">View quiz</a>
+    <a href="{% url 'scores'%}" class="btn btn-success">View Scores</a>
+    <a href="{% url 'addQues'%}" class="btn btn-success">Add question</a>
+  </div>
+  <div class="card-footer text-muted">
+  </div>
+</div>
+
+{% elif request.user.is_authenticated %}
+<div class="card text-center">
+  <div class="card-header">
+  </div>
+  <div class="card-body">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAABnlBMVEUQEBAAAACN3uH7h4eN2emF9riL4tqO1u+K5dSJ7ceH8cGN3t+M3OKM3OT9wln9xVf9yFT9y1L+zk+G87uG8r6I78P8joL7kYGN2+eH9Lv7hIv7iob8jYP90U38f42O2Ov6fJH7e5L+1Un6lH38mXqM4tz9nHf8n3T6d5T8tGSI6sv92UaP1PKF+LT8sWaJ6c39pHH9vlz7qmv/dqH9uWAkGBwAAAjXpFBmr5OO99H/4UJvt6lIdWsACwiE38UhMStuu6M3Ykj/6ERIcnHFf10ZGRI5YU8lNzQyTUpBaGNPf3pYjYhhm5dZioxBYWQzUUpVi3+A1MV/xM9poKp5tcg0S1NJe2ohLDF8t9EZIh9alIlvo7tvtaybdju3jEO2kj2Ebi47MxpdpoFyzZ/ivUZLh2coJBUqRzdQRh3GrDlhVSBsYSJfr3954qJbhZjixztvVi19cCSWhyvHlE1kppWxg0dVQCeKYzw9IyeCRUulWF7Fam7Fc2fFgVvdmV6hUmB1zKnKXX2Vfy+0eFLihnJwTTZeLzzhkWekbUtLLys+71g5AAAFoklEQVR4nO3c+VvURhzH8XwRy2EBD7xAEBaV+3QJLktAQC6tuosCbq3YIi5tFWtrccFyiBbd/tedySSwQEKyj8kTnsnn/ZuPz+Mz+3omk8mloiCEEEIIIYQQQgghhBBCCCGEEEIIIYQQQignOlDQ4zmu6TYTk1N37937gXf//uiDyTmQHY6JPEzEk8XFxd+xrrNOFRQUlJWVXZp+NDoBr5yIpuLFncXFhhXHOsWxvmdYrMLpR3PgEhHNDnYKKiuswkuFhVevPp6BFoseDrZ0OmIVFT1VwEWzLdzKGauoKPSTiwZirrHaQq5FQyUtAqvTboHfwypqmwu1Ft0SWIOzCk3GHbGehBurRMcaTBE/K/7ohBXuA3EoxrFaBoQBJZ2wnoYYiwRWp0FACSesthBjGTNr0MS664gV7HCDzZhZKfEntmhhZtlnrFkJY81yXOCBxbYOU/qtmDiwjsrE6owPTCWSjvssYOWxgweW62tDYAHLdcDKI4ZVsg9L5wKWZamPt0Vx0U9mwLLo4INCM2C5j67bY6k5BT1On7ObSq5nlvpsnvWc9/MvUnMRjS+8KK0sPc8r4en3SfX46p5MGo9Y7bGor7yiouL0mTNna2pqFl9Jy6XSy3MnL18+V1lZWlpqYOW9dWBY5eVCi3G1Lqbl1KKlZU7FrLzDikQiv8qoRcMnmZXHWEyrVUItGm73CSsiHZa61O4TVqT1N9m0aJlZ+YTV/7tcWrTQ7h9W6x9yYaXa/cSSa2rxieUnllSrFrX7itXaH/QP9DB12COsJzZYI6/kmVr02mcsmY5Dtm/wBusNKWq3FZZM58N2j7DmSEmXd1tg9UuDJZYsD7DYUai+LbeaWSPSXCDSS4+wZhjWvDXWn9JgvfYEi69YbMmyXLP6/5IG64UnWPy1P/WZDZY0p0NxMvxWLD6vFDUKLGesx/pr3fSu2wZLmr2DfrHjgLX7SDoHq8D40Klw+o340onYQRh2rJbk34kBs9GDPZhJiW/oVFqJRsONFeMfDByd/o+o9L4vGnashMDQtCO91HRmM9occqyWJZ2KaHXtwz+8daM7og29zc2ejmZWyLEm9HW7d6uutra2qurEieorVy5cvNjQ0HDt2o0bjY2NXaweXkdHWLDstg6xcWal0VZ9fW0O1oUcrEZgmVi3uVVvU1N93TdjybMptbnciQ2pupUXWPJcG1pfSJ//yCdWkydYI5+kwbK+RRObJYW2PMKS5mGYzc2/2BD7u5seYY0F/SM9a8x6zSJFW/MIS5qTod0DC7Zk0bZHWNKcDO0ehd1iM6vJGyx57iqbK7wFlnLTo5klz5JlLFoWWL3eYMl0FBrbUh+xpNk48NRxX7EWZbIS50PfsPqlecIqEq+U+oMlz3WhGds9+IQl20HI09/A9QFLthdK9dTUsg9Y/L1uCbFMLU+xIhFpbs0cSKWFvLH2rDr2rPhXYaf5V2Fnn49JasWi1EIlOxIrBddRWOvr2eydzzmtGM2LQvC5IX/mlRo3W7LH+vfAU0Obgv41/pf7pNkeK+hRHsOOnlmqemhOBT3gIMt7gQ96wEHmBmvf1kELesQBlvc+C1jAchWw8sgN1t4CDyzHBT6bJjVjzqygBxxkLrB29De40sBygbVhvFGaaQ47luaMtWNs2tOYWe6xFGBpjlgZgaW+1w/D7oDHG2iOL4Z0fTX+J+EVMbPCfCWtfXE8G27wOw+UEWfDvlDfuqFt5wvp7E5m09iUvg3zzGLlcbkTfRdyK23VLRbTCnqwgaf1brucWZtKyCeWwr+wWKurr3PAYhMrE+rFfTfStuywusSt0o6eLKaVGdGXD1X29+A/7xCoctLEV3TV1fu/Cvu6kd1JE6gOJb7PVFb/M+tV9OdhQY/rOKftFvRIEEIIIYQQQgghhBBCCCGEEEIIIYQQQgih49f/vFk6ESo8uJcAAAAASUVORK5CYII=" class="card-img-top" alt="...">
+    <br>
+    <h5 class="card-title">Online Quiz</h5>
+    <h6>Please read details carefully:</h6>
+    <ol>
+      <li>Every question carries 10 points.</li>
+      <li>Please try to attempt all the questions.</li>
+      <li>This quiz is to test your skills on python.</li>
+      <li>You can attempt this quiz multiple times, only the newly given test scores will be considered.</li>
+    </ol>
+    <a href="{% url 'pythonquiz'%}" class="btn btn-primary">Begin quiz</a>
+  </div>
+  <div class="card-footer text-muted">
+  </div>
+</div>
+
+
+{% else %}
+<div class="card">
+  <div class="card-header">
+  </div>
+  <div class="card-body">
+    <img src="data:image/png;base64,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" class="card-img-top" alt="...">
+    <br>
+    <h5 class="card-title">You need to login for attempting the quiz</h5>
+    <a href="{% url 'login'%}" class="btn btn-primary">LOGIN</a>
+  </div>
+</div>
+
+{% endif %}
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

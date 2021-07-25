@@ -1,0 +1,27 @@
+@import "background.css";
+h1{
+    text-align:center;
+}
+
+h2{
+    text-align:center;
+}
+
+h6{
+  text-align:left;
+}
+
+.card {  
+    margin-left: 25%;      
+    margin-right: 20%;
+    width: auto;
+}
+
+.card{
+  text-align:center; 
+  background-color:azure;
+}
+
+ol{
+  text-align: left;
+}

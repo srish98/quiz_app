@@ -1,0 +1,12 @@
+@import "background.css";
+
+.form-group{
+    font-weight: bold;
+}
+h3{
+    text-align:center;
+}
+
+form{
+    margin-left: 30px;
+}

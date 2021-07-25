@@ -1,0 +1,29 @@
+{% include 'testapp/nav.html' %}
+{% load static %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/scores.css' %}" type="text/css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="card" style="width: 40rem;">
+            <div class="card-body"> 
+                <h5>List of students who attempted the quiz:</h5>
+                <table style="width:100%">
+                    <tr>
+                        <th>StudentName</th>
+                        <th>Percentage</th>
+                    </tr>  
+                    {% for score in scores %}
+                        <tr>
+                            <td>{{ score.StudentName }}</td>
+                            <td>{{ score.MarksObtained }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
+

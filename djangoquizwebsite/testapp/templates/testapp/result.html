@@ -1,0 +1,21 @@
+{% include 'testapp/nav.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{% static 'css/background.css' %}" type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="jumbotron">
+  <h1 class="display-4">Score: {{marksscored}}</h1>
+  
+  <p class="card-text">Percentage: {{percentage}}%</p>
+  <p class="card-text">Correct answers: {{correctanswer}}</p>
+  <p class="card-text">Incorrect answers: {{wronganswer}}</p>
+  <p class="card-text">Total questions: {{total}}</p>
+  <a class="btn btn-primary btn-md" href="{% url 'home'%}" role="button">Go to HomePage</a>
+</div>
+</body>
+</html>

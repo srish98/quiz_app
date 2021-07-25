@@ -1,0 +1,17 @@
+@import "background.css";
+
+table, th, td {
+  border: 1px solid black;
+}
+
+.card {  
+    margin-left: 30%;      
+    margin-right: 30%;
+    width: auto;
+    margin-top: 5%;
+    background-color:azure;
+}
+
+.card-body{
+  text-align:center;
+}

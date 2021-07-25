@@ -1,0 +1,86 @@
+{% include 'testapp/nav.html' %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+.form-group{
+    font-weight: bold;
+    color: beige;
+}
+h3{
+    text-align:center;
+    color: beige;
+}
+
+form{
+    margin-left: 30px;
+    color: beige;
+}
+body {
+  background-image: url("https://i.pinimg.com/originals/5c/f2/66/5cf2660af5f4214def7166dc7a7c8062.jpg");
+}
+
+</style>
+
+
+
+<h3>PYTHON QUIZ</h3>
+<br>
+ <form method='post' action=''>
+    {% csrf_token %}
+    <h6>Note: Each question contain 10 points.</h6>
+    {% for q  in questions%}
+    <div class="form-group">
+      <label for="question">  Ques-{{q.question}}</label>
+    </div>
+    <div class="form-check">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios1" value="choice1">
+            <label class="form-check-label" for="gridRadios1">
+                {{q.choice1}}
+            </label>
+        
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios2" value="choice2">
+            <label class="form-check-label" for="gridRadios2">
+                {{q.choice2}}
+            </label>
+        </div>
+        {% if q.choice4 is not None %}
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios1" value="choice3">
+            <label class="form-check-label" for="gridRadios1">
+                {{q.choice3}}
+            </label>
+        </div>
+        {% endif %}
+
+        {% if q.choice4 is not None %}
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{q.question}}" id="gridRadios2" value="choice4">
+            <label class="form-check-label" for="gridRadios2">
+                {{q.choice4}}
+            </label>
+        </div>
+        {% endif %}
+        <br>
+    </div>    
+    {% endfor %}  
+    <br>
+    {% if not request.user.is_staff %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+    {% endif %}
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+ 

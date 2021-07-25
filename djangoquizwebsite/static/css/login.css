@@ -1,0 +1,13 @@
+@import "background.css";
+
+.card {  
+    margin-left: 40%;      
+    margin-right: 20%;
+    width: auto;
+    margin-top: 5%;
+    background-color:azure;
+}
+
+.card-body{
+  text-align:center;
+}

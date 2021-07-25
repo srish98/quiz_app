@@ -1,0 +1,26 @@
+{% include 'testapp/nav.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{% static 'css/addQues.css' %}" type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="jumbotron">
+    <div class="col-md-8">
+        <h2>Add question to quiz</h2>
+           <form action="" method="POST">
+              {% csrf_token %}
+                {{form.as_p}}
+                <br>
+             <input type="submit" name="Submit">
+             </form>
+    </div>
+</div>
+</body>
+</html>
+ 
+
+ 
